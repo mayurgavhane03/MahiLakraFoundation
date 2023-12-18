@@ -18,7 +18,7 @@
 <!-- Section: Social media -->
 <section
     class="d-flex justify-content-between p-4 text-white"
-    style="background-color: #2E2E2E"
+    style="background-color: #063"
     >
 <!-- Left -->
 <div class="me-5">
