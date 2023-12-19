@@ -29,11 +29,18 @@ Validation
 
 */
 
-
 //create a table and enter the name here
 $sql = "INSERT INTO table_name VALUES ('$name', '$school', '$city', '$state', '$email')";
 mysqli_query($conn, $sql);
 mysqli_close($conn);
+
+function generateRegNo($name){
+    $string=str_replace(' ','',$name);
+    $reg1=strtoupper(substr($string,0,3));
+    $reg2=str_pad(rand(1,999),3,'0',STR_PAD_LEFT);
+    $regId=$reg1.$reg2;
+    return $regId;
+}
 
 function sendmail($Username,$Email){
 
