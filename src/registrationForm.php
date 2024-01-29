@@ -42,6 +42,8 @@ function generateRegNo($name){
     return $regId;
 }
 
+$regId=generateRegNo($name);
+
 function sendmail($Username,$Email,$regId){
 
 $mail = new PHPMailer();
