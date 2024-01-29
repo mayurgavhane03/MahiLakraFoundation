@@ -42,7 +42,7 @@ function generateRegNo($name){
     return $regId;
 }
 
-function sendmail($Username,$Email){
+function sendmail($Username,$Email,$regId){
 
 $mail = new PHPMailer();
 $mail->IsSMTP();
@@ -70,21 +70,22 @@ $mail->addAddress($Email,$Username);
 // $mail->addBCC("user.4@in.com","User 4");
 
 $mail->Subject = "MAHI LAKRA FOUNDATION INTERNSHIP";
-$mail->Body = "Dear $Username,
-
-Greetings from MAHI LAKRA FOUNDATION.
-We are delighted to inform you that your registration on our website has been successfully 
-completed. Welcome to MAHI LAKRA FOUNDATION! We appreciate your interest and trust in our platform.
-
-$Username
-$Email
-
-If you have any questions, concerns, or need assistance, please do not reply this mail. 
-Reach out to us at info@admsociety.org . We are here to assist you. We look forward to 
+$mail->Body = "Dear $Username,<br>
+<br>
+Greetings from <b>MAHI LAKRA FOUNDATION</b>.<br>
+We are delighted to inform you that your registration on our website has been successfully completed. 
+<br><br>Welcome to <b>MAHI LAKRA FOUNDATION!</b> We appreciate your interest and trust in our platform.
+<br><br>
+Name : $Username<br>
+Email : $Email<br>
+Registration ID : $regId
+<br><br>
+If you have any questions, concerns, or need assistance, please do not reply this mail.<br>
+Reach out to us at <a href='https://instagram.com/mahilakrafoundation?igshid=YzkyYjZmZGI1Zg=='>@MahiLakraFoundation</a>. We are here to assist you. We look forward to 
 your active participation and hope that you find our platform valuable and enjoyable.
-
+<br><br>
 Best regards,
-
+<br><br>
 MAHI LAKRA FOUNDATION";
 
 if(!$mail->Send())
@@ -92,7 +93,7 @@ if(!$mail->Send())
 else
     echo "Message has been sent";
 }
-sendmail($name,$email)
+sendmail($name,$email,$regId)
 
 
 ?>
